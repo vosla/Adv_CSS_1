@@ -1,0 +1,63 @@
+<!DOCTYPE html5>
+<head>
+    <html lang="en">
+    <meta charset="UTF-8">
+    <title>Advanced CSS - Assignment 1</title>
+    <style>
+      
+    a:visited {
+         color: green;
+
+            }
+    a:visited[target="_blank"] {
+         color: red; 
+
+            }    
+    
+    .red {
+        color: red;
+            
+            } 
+    .blue {
+        color: blue;
+            
+            }
+     p[class="New"]::after {
+         content: "-NEW";
+         color: yellow;
+
+        }
+    p[class="italic"]:hover {
+        font-style: italic;
+        
+        
+
+    }
+    
+    </style>
+</head>
+
+<body>
+    <h1>Main Heading</h1>
+    <p>Paragraph 1</p>
+    <a href="https://www.google.com/">Google</a>
+    <a href="https://www.google.com/doodles">Google Doodles</a>
+    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
+    <div id="first-div">
+        <h2>Subheading</h2>
+        <p class="New">Paragraph 2</p>
+        <p class="New">Paragraph 3</p>
+        <div id="second-div">
+            <h3>Sub subheading</h3>
+            <p class="red">Paragraph 4</p>
+            <p class="blue">Paragraph 5</p>
+            <p class="red">Paragraph 6</p>
+            <p>Paragraph 7</p>
+            <p>Paragraph 8</p>
+        </div>
+    </div>
+    <p>Paragraph 9</p>
+    <p class="italic">Paragraph 10</p>
+
+
+</body>
