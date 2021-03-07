@@ -1,63 +1,109 @@
-<!DOCTYPE html5>
-<head>
-    <html lang="en">
-    <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment 1</title>
-    <style>
-      
-    a:visited {
-         color: green;
+<!DOCTYPE html>
+<html lang="en">
 
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Transformations - Carousel</title>
+
+        <style>
+            #main-container {
+                perspective: 400px;
+                position: relative;
+                width: 300px;
+                height: 220px;
+                margin: 80px auto;
             }
-    a:visited[target="_blank"] {
-         color: red; 
 
-            }    
-    
-    .red {
-        color: red;
-            
-            } 
-    .blue {
-        color: blue;
-            
+            #tile-container {
+                transform: translateZ(-300px) rotate3d(0, 1, 0, 0deg);
+                transform-style: preserve-3d;
+
+
+                animation-name: carousel-animation;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-delay: 1s;
             }
-     p[class="New"]::after {
-         content: "-NEW";
-         color: yellow;
 
-        }
-    p[class="italic"]:hover {
-        font-style: italic;
-        
-        
 
-    }
-    
-    </style>
-</head>
+            #tile-container:hover {
+                transform: translateZ(-300px) rotate3d(0, 1, 0, 360deg);
+            }
 
-<body>
-    <h1>Main Heading</h1>
-    <p>Paragraph 1</p>
-    <a href="https://www.google.com/">Google</a>
-    <a href="https://www.google.com/doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
-    <div id="first-div">
-        <h2>Subheading</h2>
-        <p class="New">Paragraph 2</p>
-        <p class="New">Paragraph 3</p>
-        <div id="second-div">
-            <h3>Sub subheading</h3>
-            <p class="red">Paragraph 4</p>
-            <p class="blue">Paragraph 5</p>
-            <p class="red">Paragraph 6</p>
-            <p>Paragraph 7</p>
-            <p>Paragraph 8</p>
+            .tile {
+                width: 300px;
+                height: 220px;
+                border-radius: 8px;
+                position: absolute;
+                margin: 0 auto;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 64px;
+                opacity: 0.95;
+            }
+
+
+            #tile-1 {
+                background-image: url("img/like.png");
+                background-color: #914E67;
+                transform: rotateY(0deg) translateZ(300px);
+            }
+
+            #tile-2 {
+                background-image: url("img/idea.png");
+                background-color: #4FBA6F;
+                transform: rotateY(72deg) translateZ(300px);
+            }
+
+            #tile-3 {
+                background-image: url("img/clock.png");
+                background-color: #5192D2;
+                transform: rotateY(144deg) translateZ(300px);
+            }
+
+            #tile-4 {
+                background-image: url("img/star.png");
+                background-color: #E8BF1C;
+                transform: rotateY(216deg) translateZ(300px);
+            }
+
+            #tile-5 {
+                background-image: url("img/note.png");
+                background-color: #5D7586;
+                transform: rotateY(288deg) translateZ(300px);
+            }
+
+            @keyframes carousel-animation {
+                0% {
+                    transform: translateZ(-300px) rotate3d(0, 1, 0, 0deg);
+                }
+
+                45% {
+                    transform: translateZ(-300px) rotate3d(0, 1, 0, 160deg);
+                }
+
+                55% {
+                    transform: translateZ(-300px) rotate3d(0, 1, 0, 160deg);
+                }
+
+                100% {
+                    transform: translateZ(-300px) rotate3d(0, 1, 0, 360deg);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main-container">
+            <div id="tile-container">
+                <div class="tile" id="tile-1"></div>
+                <div class="tile" id="tile-2"></div>
+                <div class="tile" id="tile-3"></div>
+                <div class="tile" id="tile-4"></div>
+                <div class="tile" id="tile-5"></div>
+            </div>
         </div>
-    </div>
-    <p>Paragraph 9</p>
-    <p class="italic">Paragraph 10</p>
 
+    </body>
 
-</body>
+</html>
